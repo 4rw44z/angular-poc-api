@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="search-container">
+    <input placeholder="Search User" [(ngModel)]="userSerachTerm" />
+  </div>
+  <div class="cards-container">
+    <div class="cards" *ngFor="let item of userData | searchFilter: userSerachTerm">
+      <div><img [src]="item.avatar" alt="avatar" /></div>
+      <div><span>Name: </span> <span>{{item.first_name}}</span></div>
+    </div>
+  </div>
+  <div class="action-page-buttons-container">
+    <button class="previous-button" (click)="previousButtonClicked($event)">Previous</button>
+    <button class="next-button" (click)="nextButtonClicked($event)">Next</button>
+  </div>
+</div>
